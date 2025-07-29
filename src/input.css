@@ -1,7 +1,8 @@
 @import "tailwindcss";
 @theme {
   --color-primary: oklch(70.4% 0.14 182.503);
-  --color-secondary: oklch(20.8% 0.042 265.755);
+  --color-dark: oklch(20.8% 0.042 265.755);
+  --color-secondary: oklch(55.4% 0.046 257.417)
 }
 
 @utility text-primary {
@@ -9,9 +10,35 @@
 }
 
 @utility text-dark {
+  color: var(--color-dark);
+}
+
+@utility text-secondary {
   color: var(--color-secondary);
 }
 
-@utility bg-primary {
-  background-color: var(--color-primary);
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.navbar-fixed {
+  @apply fixed z-[9999] bg-white/80;
+  backdrop-filter: blur(5px);
+  box-shadow: inset 0 -1px 0 0 rgb(0, 0, 0, 0.1)
+}
+
+.hamburger-line {
+  @apply w-[30px] h-[2px] my-2 block bg-dark;
+}
+
+.hamburger-active > span:nth-child(1) {
+  @apply rotate-45;
+}
+
+.hamburger-active > span:nth-child(3) {
+  @apply -rotate-45;
+}
+
+.hamburger-active > span:nth-child(2) {
+  @apply scale-0
 }

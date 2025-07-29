@@ -1,16 +1,14 @@
 // tailwind.config.js
-
 export default {
   content: [
-     "./index.html"
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}", // tambahkan path lain kalau kamu pakai framework
   ],
   theme: {
-    container: {
-      center: true,
-      padding: '4rem', 
-      screens: {
-        '2xl': '1320px'
-      }
+    extend: {
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'],
+      },
     },
   },
   plugins: [],
